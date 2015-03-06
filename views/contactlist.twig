@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>To Do List</title>
+</head>
+<body>
+  <h1>Contact List</h1>
+    {% if contacts is not empty %}
+      <p>Name:<p>
+        <ul>
+          {% for contact in contacts %}
+            <li>{{ contact.getContact }}</li>
+          {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action='/contacts' method='post'>
+      <label for='contacts'>Name</label>
+      <input id='contacts' name='contacts' type='text'>
+
+      <button type='submit'>Add Contact</button>
+    </form>
+    <form action='/delete_contacts' method='post'>
+      <button type='submit'>Delete Contacts</button>
+    </form>
+</body>
+</html>
