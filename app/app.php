@@ -15,7 +15,7 @@
     ));
 
     $app->get('/', function() use ($app) {
-        return $app['twig']->render('contact.php', array('contacts' => Contacts::getAll()));
+        return $app['twig']->render('contactlist.twig', array('contacts' => Contacts::getAll()));
 
     });
 

@@ -7,9 +7,9 @@
     {
         $this->contact = $contact;
     }
-      function setContact($new_contact)
+      function setContact($contact)
     {
-        $this->contact = (string) $new_contact;
+        $this->contact = (string) $contact;
     }
       function getContact()
     {

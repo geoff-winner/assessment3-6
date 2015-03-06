@@ -4,7 +4,7 @@
 </head>
 <body>
   <h1>Contact List</h1>
-    {% if contacts is not empty %}
+    {% if contact is not empty %}
       <p>Name:<p>
         <ul>
           {% for contact in contacts %}
@@ -13,7 +13,7 @@
         </ul>
     {% endif %}
 
-    <form action='/contacts' method='post'>
+    <form action='/create_contact' method='post'>
       <label for='contacts'>Name</label>
       <input id='contacts' name='contacts' type='text'>
 
