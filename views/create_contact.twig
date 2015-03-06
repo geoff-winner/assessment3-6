@@ -1,10 +1,24 @@
 <html>
   <head>
-  <title>Contact List</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' type='text/css'>
+      <title>Contact List</title>
   </head>
   <body>
-    <h1>You added a Contact</h1>
-    <p>{{ newcontact.getContact }}</p>
-    <p><a href='/'>View Contacts</a></p>
+    <div class='container'>
+      <h1>You added a Contact</h1>
+  {% if contacts is not empty %}
+    <p>Name, Number, Address, Picutre:</p>
+      <ul>
+      {% for newcontact in contacts %}
+          <img src="{{ newcontact.getImage }}"/>
+          <li>{{ newcontact.getContact }}</li>
+          <li>{{ newcontact.getNumber }}</li>
+          <li>{{ newcontact.getAddress }}</li>
+
+      {% endfor %}
+      </ul>
+  {% endif %}
+    <button type='submit'><a href='/'>View Contacts</a></button>
+  </div>
   </body>
 </html>

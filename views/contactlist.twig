@@ -1,24 +1,39 @@
 <html>
 <head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' type='text/css'>
   <title>Contact List</title>
 </head>
 <body>
-  <h1>Contact List</h1>
+  <div class='container'>
+    <h1>Contact List</h1>
     {% if contacts is not empty %}
-      <p>Name:<p>
+      <p>Name, Number, Address, Picutre:</p>
         <ul>
         {% for newcontact in contacts %}
+            <img src="{{ newcontact.getImage }}"/>
             <li>{{ newcontact.getContact }}</li>
+            <li>{{ newcontact.getNumber }}</li>
+            <li>{{ newcontact.getAddress }}</li>
+
         {% endfor %}
         </ul>
     {% endif %}
 
-    <form action='/create_contact' method='post'>
+  <form action='/create_contact' method='post'>
+    <div class='form-group'>
       <label for='contact'>Name</label>
       <input id='contact' name='contact' type='text'>
+      <label for='number'>Phone Number</label>
+      <input id='number' name='number' type='number'>
+      <label for='address'>Address</label>
+      <input id='address' name='address' type='text/number'>
+      <label for='image'>Add a Picture</label>
+      <input id='image' name='image' type='url'>
+    </div>
+  </div>
 
       <button type='submit'>Add Contact</button>
-    </form>
+  </form>
     <form action='/delete_contacts' method='post'>
       <button type='submit'>Delete Contacts</button>
     </form>
