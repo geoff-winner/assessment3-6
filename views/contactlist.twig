@@ -7,7 +7,7 @@
   <div class='container'>
     <h1>Contact List</h1>
     {% if contacts is not empty %}
-      <p>Name, Number, Address, Picutre:</p>
+      <p>Picture,Name, Number, Address:</p>
         <ul>
         {% for newcontact in contacts %}
             <img src="{{ newcontact.getImage }}"/>
