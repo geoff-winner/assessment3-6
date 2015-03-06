@@ -1,19 +1,19 @@
 <?php
   class Contacts
   {
-      private $contact;
+      public $contact;
 
       function __construct($contact)
     {
         $this->contact = $contact;
     }
-      function setContact($contact)
+      function setContact()
     {
         $this->contact = (string) $contact;
     }
       function getContact()
     {
-        $this->contact;
+        return $this->contact;
     }
       function save()
     {

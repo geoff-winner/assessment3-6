@@ -1,21 +1,21 @@
 <html>
 <head>
-  <title>To Do List</title>
+  <title>Contact List</title>
 </head>
 <body>
   <h1>Contact List</h1>
-    {% if contact is not empty %}
+    {% if contacts is not empty %}
       <p>Name:<p>
         <ul>
-          {% for contact in contacts %}
-            <li>{{ contact.getContact }}</li>
-          {% endfor %}
+        {% for newcontact in contacts %}
+            <li>{{ newcontact.getContact }}</li>
+        {% endfor %}
         </ul>
     {% endif %}
 
     <form action='/create_contact' method='post'>
-      <label for='contacts'>Name</label>
-      <input id='contacts' name='contacts' type='text'>
+      <label for='contact'>Name</label>
+      <input id='contact' name='contact' type='text'>
 
       <button type='submit'>Add Contact</button>
     </form>
